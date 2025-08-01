@@ -1,0 +1,32 @@
+echo 'Port 22' > /etc/ssh/sshd_config
+echo 'ChallengeResponseAuthentication no' >> /etc/ssh/sshd_config
+echo 'KexAlgorithms ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256' >> /etc/ssh/sshd_config
+echo 'Ciphers aes256-ctr' >> /etc/ssh/sshd_config
+echo 'MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256' >> /etc/ssh/sshd_config
+echo 'Protocol 2' >> /etc/ssh/sshd_config
+echo 'HostKey /etc/ssh/ssh_host_ed25519_key' >> /etc/ssh/sshd_config
+echo 'HostKey /etc/ssh/ssh_host_ecdsa_key' >> /etc/ssh/sshd_config
+echo 'HostKey /etc/ssh/ssh_host_dsa_key' >> /etc/ssh/sshd_config
+echo 'HostKey /etc/ssh/ssh_host_rsa_key' >> /etc/ssh/sshd_config
+echo 'UsePrivilegeSeparation sandbox' >> /etc/ssh/sshd_config
+echo 'KeyRegenerationInterval 3600' >> /etc/ssh/sshd_config
+echo 'ServerKeyBits 1024' >> /etc/ssh/sshd_config
+echo 'SyslogFacility AUTH' >> /etc/ssh/sshd_config
+echo 'LogLevel INFO' >> /etc/ssh/sshd_config
+echo 'LoginGraceTime 60' >> /etc/ssh/sshd_config
+echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
+echo 'AllowGroups ssh' >> /etc/ssh/sshd_config
+echo 'StrictModes yes' >> /etc/ssh/sshd_config
+echo 'RSAAuthentication yes' >> /etc/ssh/sshd_config
+echo 'PubkeyAuthentication yes' >> /etc/ssh/sshd_config
+echo 'IgnoreRhosts yes' >> /etc/ssh/sshd_config
+echo 'RhostsRSAAuthentication no' >> /etc/ssh/sshd_config
+echo 'HostbasedAuthentication no' >> /etc/ssh/sshd_config
+echo 'PermitEmptyPasswords no' >> /etc/ssh/sshd_config
+echo 'X11Forwarding no' >> /etc/ssh/sshd_config
+echo 'X11DisplayOffset 10' >> /etc/ssh/sshd_config
+echo 'PrintMotd yes' >> /etc/ssh/sshd_config
+echo 'PrintLastLog yes' >> /etc/ssh/sshd_config
+echo 'TCPKeepAlive yes' >> /etc/ssh/sshd_config
+echo 'AcceptEnv LANG LC_*' >> /etc/ssh/sshd_config
+echo 'Subsystem sftp /usr/lib/openssh/sftp-server' >> /etc/ssh/sshd_config
